@@ -1,5 +1,5 @@
 server:
-  port: 9010
+  port: 8761
 spring:
   application:
     name: mss-eureka
@@ -10,7 +10,7 @@ spring:
     time-zone: GMT+8
 eureka:
   instance:
-    hostname: mss-eureka
+    hostname: localhost
   client:
     register-with-eureka: false
     fetch-registry: false

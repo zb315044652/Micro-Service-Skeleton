@@ -25,4 +25,5 @@ public class RoleServiceImpl implements RoleService {
     public List<SysRole> getRoleByUserId(Integer userId) {
         return roleMapper.getRoleByUserId(userId);
     }
+
 }

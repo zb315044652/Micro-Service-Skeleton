@@ -17,10 +17,13 @@ import java.util.List;
  */
 @Service
 public class PermissionServiceImpl implements PermissionService {
+
     @Autowired
     private SysMenuMapper menuMapper;
+
     @Override
     public List<SysMenu> getPermissionsByRoleId(Integer roleId) {
         return menuMapper.getPermissionsByRoleId(roleId);
     }
+
 }

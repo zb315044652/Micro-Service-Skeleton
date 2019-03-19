@@ -17,6 +17,8 @@ import java.util.List;
  */
 @FeignClient(name = "mss-upms",fallback = PermissionServiceImpl.class)
 public interface PermissionService {
+
     @GetMapping("permission/getRolePermission/{roleId}")
     Result<List<MenuVo>> getRolePermission(@PathVariable("roleId") Integer roleId);
+
 }

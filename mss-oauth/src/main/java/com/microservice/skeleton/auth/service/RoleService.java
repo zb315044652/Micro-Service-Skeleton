@@ -17,6 +17,8 @@ import java.util.List;
  */
 @FeignClient(name = "mss-upms",fallback = RoleServiceImpl.class)
 public interface RoleService {
+
     @GetMapping("role/getRoleByUserId/{userId}")
     Result<List<RoleVo>> getRoleByUserId(@PathVariable("userId") Integer userId);
+
 }

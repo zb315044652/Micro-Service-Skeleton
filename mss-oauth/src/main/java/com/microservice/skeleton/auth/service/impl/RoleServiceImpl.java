@@ -18,9 +18,11 @@ import java.util.List;
 @Service
 @Slf4j
 public class RoleServiceImpl implements RoleService {
+
     @Override
     public Result<List<RoleVo>> getRoleByUserId(Integer userId) {
         log.info("调用{}失败","getRoleByUserId");
         return Result.failure(100,"调用getRoleByUserId失败");
     }
+
 }

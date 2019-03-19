@@ -37,22 +37,23 @@ public class SecurityConfig extends ResourceServerConfigurerAdapter {
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests().antMatchers("/v2/api-docs","/uaa/**").permitAll();
+        http.authorizeRequests().antMatchers("/v2/api-docs", "/uaa/**").permitAll();
 
-        ExpressionUrlAuthorizationConfigurer<HttpSecurity>.ExpressionInterceptUrlRegistry registry = http
-                .authorizeRequests();
-        for (String au:AUTH_WHITELIST
-             ) {
+        ExpressionUrlAuthorizationConfigurer<HttpSecurity>.ExpressionInterceptUrlRegistry registry
+                = http.authorizeRequests();
+        for (String au : AUTH_WHITELIST) {
             http.authorizeRequests().antMatchers(au).permitAll();
         }
         http.authorizeRequests().anyRequest().authenticated();
         registry.anyRequest()
                 .access("@permissionService.hasPermission(request,authentication)");
     }
+
     @Override
     public void configure(ResourceServerSecurityConfigurer resources) {
         resources.expressionHandler(expressionHandler);
     }
+
     @Bean
     public OAuth2WebSecurityExpressionHandler oAuth2WebSecurityExpressionHandler(ApplicationContext applicationContext) {
         OAuth2WebSecurityExpressionHandler expressionHandler = new OAuth2WebSecurityExpressionHandler();

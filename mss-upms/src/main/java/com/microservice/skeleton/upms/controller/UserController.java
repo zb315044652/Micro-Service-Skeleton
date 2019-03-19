@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("user")
 public class UserController {
+
     @Autowired
     private UserService userService;
 
@@ -30,4 +31,5 @@ public class UserController {
         }
         return Result.ok().setData(user);
     }
+
 }

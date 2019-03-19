@@ -37,7 +37,7 @@
 		<module>mss-eureka</module>
 		<module>mss-oauth</module>
 		<module>mss-gateway</module>
-		<module>mss-monitor</module>
+		<!--<module>mss-monitor</module>-->
 		<module>mss-upms</module>
 	</modules>
 	<dependencies>

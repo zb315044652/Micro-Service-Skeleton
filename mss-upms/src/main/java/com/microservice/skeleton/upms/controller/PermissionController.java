@@ -23,8 +23,10 @@ import java.util.List;
 @RestController
 @RequestMapping("permission")
 public class PermissionController {
+
     @Autowired
     private PermissionService permissionService;
+
     @GetMapping("getRolePermission/{roleId}")
     public Result getRolePermission(@PathVariable("roleId") Integer roleId){
         List<SysMenu> menuList = permissionService.getPermissionsByRoleId(roleId);

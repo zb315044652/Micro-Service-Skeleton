@@ -21,8 +21,10 @@ import java.util.List;
 @RestController
 @RequestMapping("role")
 public class RoleController {
+
     @Autowired
     private RoleService roleService;
+
     @GetMapping("getRoleByUserId/{userId}")
     public Result getRoleByUserId(@PathVariable("userId") Integer userId){
         List<SysRole> roleList = roleService.getRoleByUserId(userId);
